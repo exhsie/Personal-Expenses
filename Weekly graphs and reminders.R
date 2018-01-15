@@ -43,7 +43,7 @@ Expenses.cashback = bind_rows(a, Expenses)
 
 
 
-          #3. Summarise for monthly budgeting where 500 is the amount of budget you want to set 
+         #3. Summarise for monthly budgeting where 500 is the budget you want to set for each month
 
 
 
