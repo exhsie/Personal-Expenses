@@ -82,9 +82,9 @@ ggslackr(ggplot(Monthly.Expenses.future, aes(MonYear, Amount)) +
            scale_x_date(labels = date_format("%b-%Y"))+
            geom_errorbar(aes(ymin = Budget, ymax = Budget), size = 2) + 
            geom_text(aes(label = paste("$", (Amount), "\n", 
-                                       "(", round(Amount/Budget *100), "%", ")", sep = ""), y = 30), 
+                                       "(", round(Amount/Budget *100), "%", ")", sep = ""), y = 60), 
                      size = 4, colour = "black") + theme_minimal() + 
-           geom_text(aes(label = paste("$", (Budget)), y = Budget + 15)) +
+           geom_text(aes(label = paste("$", (Budget)), y = Budget + 30)) +
            geom_hline(yintercept = 500, linetype="dashed", color = "red", size=1) +
            labs(title = "Monthly budget and expenditure", x = "Month", y = "Expenditure($)"))
 
@@ -112,15 +112,16 @@ num.today = as.numeric(day(today()))
 
 #vectorise current month row to make it easier to work on
 currentmonth =  slice(Monthly.Expenses, n())
-expectedexpenditure = (num.today/monthdays) * currentmonth$Budget
+expectedexpenditure = round((num.today/monthdays) * currentmonth$Budget,digits =2)
 
 #message shows whether spending in line with expected amount. +ve reinforcement for meeting goal. 
 spent = abs(round(expectedexpenditure - currentmonth$Amount, digits = 2))
-y = paste("Well done! ", "You're ", "$", spent, 
-          " under budget so far. Reward yourself with a movie :).")
-n = paste("You're ", "$", spent, "over budget so far. Beeee carefulllll *stares*.")
+y = paste("Well done! ", "You've spent ", "$", currentmonth$Amount, " so far, which is ",
+          "$", spent, "under your budget. Reward yourself with a movie :).")
+n = paste("You're ", "$", spent, "over your budget of ", "$", expectedexpenditure,
+          "so far. Beeee carefulllll *stares*.")
 
 #sends conditional message to slack
 if(currentmonth$Amount<=expectedexpenditure)
-  slackr_msg(y, as_user = FALSE, username = "Budget update") else
-    slackr_msg(n, as_user = FALSE, username = "Budget update")
+  slackr_msg(y, as_user = FALSE, username = "Weekly Budget update") else
+    slackr_msg(n, as_user = FALSE, username = "Weekly Budget update")
