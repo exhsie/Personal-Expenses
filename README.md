@@ -2,7 +2,7 @@
 Combines Monefy data to track expenses, sending reminders and graphs to your mobile.
 
 # About
-I've been using the Monefy App to keep track of my daily expenses since it's easy to immediately add expenses and decided to write an R script to automatically send messages and graphs to my mobile at the end of every week and month. These remind me to keep within my budget by showing how much I've spent and utilise the behaviour modification techniques of positive reinforcement and negative punishment to encourage behaviour maintenance/change. 
+I've been using the Monefy App to keep track of my daily expenses since it's easy to immediately add expenses and decided to write an R script to automatically send messages and graphs to my mobile at the end of every week and month. These remind me to keep within my budget by showing how much I've spent and utilise the behaviour modification technique of intermittent reinforcement through a fixed interval schedule (i.e. weekly & monthly) to encourage behaviour maintenance/change. 
 
 # What it does  
 1. Gets the Monefy .csv and Cashback .xlsx files from a folder in your computer
@@ -12,7 +12,7 @@ I've been using the Monefy App to keep track of my daily expenses since it's eas
 5. Generates a graph showing monthly expenditure and budget (to view weekly)
 6. Generates a graph showing a breakdown of the monthly expenditure (to view weekly)
 7. Sends graphs and messages to your Slack Account
-8. Determines if budget met, sends corresponding message
+8. Determines if budget goals met, sends corresponding message
  
 # To use this, you need to
 1. Download Monefy's mobile app (Available on both Android & IOS)
