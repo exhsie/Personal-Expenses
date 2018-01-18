@@ -117,11 +117,11 @@ expectedexpenditure = round((num.today/monthdays) * currentmonth$Budget,digits =
 #message shows whether spending in line with expected amount. +ve reinforcement for meeting goal. 
 spent = abs(round(expectedexpenditure - currentmonth$Amount, digits = 2))
 y = paste("Well done! ", "You've spent ", "$", currentmonth$Amount, " so far, which is ",
-          "$", spent, "under your budget. Reward yourself with a movie :).")
-n = paste("You're ", "$", spent, "over your budget of ", "$", expectedexpenditure,
+          "$", spent, "under this week's budget. Reward yourself with a movie :).")
+n = paste("You're ", "$", spent, "over this week's budget of ", "$", expectedexpenditure,
           "so far. Beeee carefulllll *stares*.")
 
 #sends conditional message to slack
 if(currentmonth$Amount<=expectedexpenditure)
-  slackr_msg(y, as_user = FALSE, username = "Weekly Budget update") else
-    slackr_msg(n, as_user = FALSE, username = "Weekly Budget update")
+  slackr_msg(y, as_user = FALSE, username = "Weekly reminder") else
+    slackr_msg(n, as_user = FALSE, username = "Weekly reminder")
