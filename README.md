@@ -1,13 +1,8 @@
 # Personal-Expenses
 Combines Monefy data to track expenses, sending reminders and graphs to your mobile.
 
-<<<<<<< HEAD
-# About
-I've been using the Monefy App to keep track of my daily expenses since it's easy to immediately add expenses and decided to write an R script to automatically send messages and graphs to my mobile at the end of every week and month. These remind me to keep within my budget by showing how much I've spent and utilise the behaviour modification technique of intermittent reinforcement through a fixed interval schedule (i.e. weekly & monthly) to encourage behaviour maintenance/change. 
-=======
 ## About
-I've been using the Monefy App to keep track of my daily expenses since it's easy to immediately add expenses and decided to write an R script to automatically send messages and graphs to my mobile at the end of every week and month. These remind me to keep within my budget by showing how much I've spent and utilise the behaviour modification techniques of positive reinforcement and negative punishment to encourage behaviour maintenance/change. 
->>>>>>> 39a4a837cf824c6188f0d64727ae009e4be40403
+I've been using the Monefy App to keep track of my daily expenses since it's easy to immediately add expenses and decided to write an R script to automatically send messages and graphs to my mobile at the end of every week and month. These remind me to keep within my budget by showing how much I've spent and utilise the behaviour modification technique of intermittent reinforcement through a fixed interval schedule (i.e. weekly & monthly) to encourage behaviour maintenance/change. 
 
 ## What it does  
 1. Gets the Monefy .csv and Cashback .xlsx files from a folder in your computer
